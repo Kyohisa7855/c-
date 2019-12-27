@@ -1,0 +1,36 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Witaj Ten program obliczy za ciebię podatek dochodowy");
+        
+            {
+                Console.WriteLine("podaj swoje dochody brutto!: ");
+                double dochod = Console.ReadLine();
+                //double z;
+                //z=kwota zmniejszajaca podatek
+                //dochod < 8000 to z = 1420
+                //dochod < 13000 to z = 1420-871.7*(dochod-8000)/5000
+                //dochod < 85528 to z = 548.30
+                //dochod < 127000 to z = 548.30-(548.30*(dochod-85528)/41472)
+                //dochod > 127000 to z = 0
+
+                if (dochod <= 85528)
+                {
+                    double x1 = (dochod * 0.1775);// - z;
+                    Console.WriteLine("Twój podatek wynosi " + x1);
+                }
+
+                else
+                {
+                    double x2 = 15181.22 + ((dochod - 85528) * 0.32);// - z);//0.32-32%
+                    Console.WriteLine("Twój podatek wynosi " + x2);
+                }
+            }
+        }
+    }
+}
